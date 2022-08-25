@@ -1,0 +1,27 @@
+<a routerLink="/admin/products/create" class="btn">Add Products </a>
+<table>
+  <thead>
+    <tr>
+      <th>#id</th>
+      <th>Title</th>
+      <th>Image</th>
+      <th>Actin</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let Product of products">
+      <td>{{ Product.id }}</td>
+      <td>{{ Product.title }}</td>
+      <td><img [src]="Product.image" alt="" width="90" /></td>
+      <td>
+        <button mat-raised-button color="button" class="btn">
+          <a routerLink="/admin/products/edit">Edit</a>
+        </button>
+        <button mat-raised-button color="warn" class="btn btn-del">
+          delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
